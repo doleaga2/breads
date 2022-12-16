@@ -12,4 +12,5 @@ breads.get('/:arrayIndex', (req, res) => {
     res.send(`<img src=${breadimg}></img>`)
 })
 module.exports = breads
+// //localhost:3003/breads/1 the number is 0-3 not 1-4 ARRAYS START WITH 0 
 
