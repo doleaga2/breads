@@ -14,12 +14,16 @@ breads.get('/', (req, res) => {
 
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
-    
-   
-    let breadimg = Bread[req.params.arrayIndex].image
-    
-    res.send(`<img src=${breadimg}></img>`)
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex]
+    })
+  } else {
+    res.send('404')
+  }
 })
+
+
 module.exports = breads
 // //localhost:3003/breads/1 the number is 0-3 not 1-4 ARRAYS START WITH 0 
 
