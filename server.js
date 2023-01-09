@@ -8,6 +8,7 @@ const app = express()
 
 
 // MIDDLEWARE
+app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
